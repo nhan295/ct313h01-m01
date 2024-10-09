@@ -6,7 +6,7 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#category">Category</a>
                         
-                            <ul class="subuser">
+                            <ul class="sub_product">
                                 <li><a href="#">New Arrive</a></li>
                                 <li><a href="#">Romantic</a></li>
                                 <li><a href="#">Adventure</a></li>
@@ -89,7 +89,7 @@ html {
     font-size: 30px;
 }
 
-.subuser li a {
+.sub_product li a {
     color: #000;
     line-height: 38px;
     text-align: right;
@@ -101,7 +101,7 @@ html {
     background-color: #ccc;
 }
 
-.nav li:hover .subuser{
+.nav li:hover .sub_product{
     display: inline-block;
 }
 
@@ -142,7 +142,7 @@ html {
     border: 1px solid #fff;
 }
 
-.subuser {
+.sub_product {
     display: none;
     min-width: 160px;
     background-color: #fff;
@@ -151,7 +151,7 @@ html {
     margin-right: 20px;
 }
 
-.subuser li{
+.sub_product li{
     color: #000;
     line-height: 38px;
     list-style-type: none;

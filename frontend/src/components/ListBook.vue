@@ -43,10 +43,11 @@
         /* margin: auto 0; */
         align-items: center;
         flex-direction: column;
-        border: 1px solid blue;
+        border: 1px solid rgb(119, 138, 150);
         border-radius: 4px;
+        box-shadow: inset;
     }
     .list-item img {
-        width: 50%;
+        width: 40%;
     }
 </style>

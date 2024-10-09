@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import HomePage_Header from '@/components/HomePage_Header.vue';
+import HomePage_Header from '@/components/HomePage_Header.vue';
 import ListBook from '@/components/ListBook.vue';
     export default {
         components: {

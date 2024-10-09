@@ -1,31 +1,35 @@
 <template>
-    <div class="main">
+   <div class="main">
         <div class="header">
             <div class="header-nav">
                 <ul class="nav">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#band">Category</a></li>
-                    <li  class="user" style="cursor: pointer;">
-                        <ul class="subuser">
-                            <li><a href="#">New Arrive</a></li>
-                            <li><a href="#">Romantic</a></li>
-                            <li><a href="#">Adventure</a></li>
-                        </ul>
+                    <li><a href="#category">Category</a>
+                        
+                            <ul class="sub_product">
+                                <li><a href="#">New Arrive</a></li>
+                                <li><a href="#">Romantic</a></li>
+                                <li><a href="#">Adventure</a></li>
+                            </ul>
+                        
                     </li>
-                    <li><a href="#tour">Cart</a></li>
+                    <li><a href="#cart">Cart</a></li>
                     <li><a href="#contact">About Us</a></li>
-                    <li  class="user" style="cursor: pointer;">
-                        <a>
-                            <img class="user-img" src="#" alt="user_img">
-                            
-                        </a>
-                        <ul class="subuser">
-                            <li><a class="js-userInfor js-closeChangePass">User Information</a></li>
-                            <li><a href="#">Log Out</a></li>
-                        </ul>
-                    </li>
                     
                 </ul>
+                
+
+                <li  class="user" style="cursor: pointer;">
+                    <a>
+                        <img class="user-img" src="#" alt="user_img">
+                            
+                    </a>
+                        
+                    <ul class="subuser">
+                        <li><a class="js-userInfor js-closeChangePass">User Information</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                </li>
                 
             </div>
         </div>
@@ -58,7 +62,7 @@ html {
 .header-nav{
     position: fixed;
     background-color: #000;
-    height: px;
+    height: 70px;
     top: 0;
     left: 0;
     right: 0;
@@ -76,9 +80,10 @@ html {
     line-height: 46px;
     display: block;
     color: #fff;
+    font-size: 30px;
 }
 
-.subuser li a {
+.sub_product li a {
     color: #000;
     line-height: 38px;
     text-align: right;
@@ -90,9 +95,11 @@ html {
     background-color: #ccc;
 }
 
-.nav li:hover .subuser{
-    display: block;
+.nav li:hover .sub_product{
+    display: inline-block;
 }
+
+
 
 .user{
     float: right;
@@ -111,6 +118,7 @@ html {
     display: block;
     color: #fff;
     cursor: pointer;
+    font-size: 30px;
 }
 
 .user a:hover {
@@ -130,17 +138,16 @@ html {
     border: 1px solid #fff;
 }
 
-.subuser {
+.sub_product {
     display: none;
     min-width: 160px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: absolute;
-    right: 0;
     margin-right: 20px;
 }
 
-.subuser li{
+.sub_product li{
     color: #000;
     line-height: 38px;
     list-style-type: none;
@@ -187,6 +194,33 @@ html {
     /* text-align: justify; căn đều 2 bên */
     text-align: justify;
     line-height: 1.4;
+}
+/* ------------------------------------------------------------------------- */
+.subuser li a {
+    color: #000;
+    line-height: 38px;
+    text-align: right;
+}
+
+.subuser {
+    display: none;
+    min-width: 160px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    margin-right: 20px;
+    right: 0;
+}
+
+.user:hover .subuser{
+    display: inline-block;
+}
+
+.subuser li{
+    color: #000;
+    line-height: 38px;
+    list-style-type: none;
+    cursor: pointer;
 }
 
 </style>
