@@ -1,6 +1,6 @@
 <template>
   <router-view></router-view>
-  <div class="container">
+  <!-- <div class="container">
     <div class="columns">
       <div class="column is-3">
         <CartList />
@@ -9,16 +9,20 @@
         <ProductList />
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 
-<script setup>
-  import CartList from '@/components/cart/CartList.vue';
-  import ProductList from '@/components/product/ProductList.vue';
+<script>
+  // import CartList from '@/components/cart/CartList.vue';
+  // import ProductList from '@/components/product/ProductList.vue';
+  export default{
+    name: 'App',
+    components: {},
+  };
 </script>
 
-<style>
+<!-- <style>
 html,
 body {
   background: #f2f6fa;
@@ -31,11 +35,11 @@ body {
   justify-content: center;
 }
 
-@media screen and (min-width: 769px) {
+/* @media screen and (min-width: 769px) {
 
   html,
   body {
     height: 100%;
   }
-}
-</style>
+} */
+</style> -->

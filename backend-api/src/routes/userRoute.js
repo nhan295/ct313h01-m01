@@ -1,4 +1,3 @@
-
 const express = require('express')
 const userController = require('../controllers/userController')
 
@@ -12,11 +11,11 @@ module.exports.setup = (app) => {
     // Sign up api routes
     router.post('/signup', userController.signup)
 
-    // Sign in api routes
+    // Sign iyn api routes
     router.post('/signin', userController.signin)
 
-    // // Log out api routes
-    // router.post('/logout', userController.logout)
+    // Log out api routes
+    router.post('/logout', userController.logout)
 
     // Get user data api routes
     router.get('/', userController.userData)

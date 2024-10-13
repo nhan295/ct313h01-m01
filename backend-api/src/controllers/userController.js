@@ -100,10 +100,13 @@ const userData = (req, res) => {
     res.status(200).json({ user: req.session.user });
 }
 
+
+
 module.exports = {
     getAllUsers,
     signup,
     signin,
-    userData
+    userData,
+    logout
   
 }

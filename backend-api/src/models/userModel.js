@@ -1,4 +1,3 @@
-
 const db = require('../config/db');
 
 
@@ -6,15 +5,15 @@ const db = require('../config/db');
 const userModel = {
 
     getUserData: (username) => {
-        return db('users').select('*').where({ ND_HoTen: username }).first();
+        return db('NGUOI_DUNG').select('*').where({ ND_HoTen: username }).first();
     },
 
     getUsername: (username) => {
-        return db('users').where({ ND_HoTen: username }).first();
+        return db('NGUOI_DUNG').where({ ND_HoTen: username }).first();
     },
 
     getEmail: (email) => {
-        return db('users').where({ ND_Email: username }).first();
+        return db('NGUOI_DUNG').where({ ND_Email: email }).first();
     },
 
     getPassword: (username) => {
@@ -26,7 +25,7 @@ const userModel = {
     },
     
     signup: (username, password, email, date) => {
-        return db('users').insert({
+        return db('NGUOI_DUNG').insert({
             ND_HoTen: username,
             ND_MatKhau: password,
             ND_Email: email,
@@ -35,7 +34,7 @@ const userModel = {
     },
 
     signin: (username, password) => {
-        return db('users')
+        return db('NGUOI_DUNG')
        .where({ ND_HoTen: username })
     }
 }

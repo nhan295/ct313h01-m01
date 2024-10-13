@@ -1,5 +1,4 @@
 <template>
- 
 
   <div class="container" :class="{ 'sign-up-mode': isSignUpMode }">
     <div class="forms-container">
@@ -145,10 +144,11 @@ methods: {
             headers: {
               'Content-Type': 'application/json'
             },
+            credentials: "include",
             body: JSON.stringify(data)
           })
           if (response.ok) {
-            this.$router.push('/');
+            this.$router.push('/UserPage');
           } else {
             const errorText = await response.text()
             document.querySelector('.message-sign-up').innerHTML = JSON.parse(errorText).message
@@ -181,7 +181,7 @@ methods: {
             body: JSON.stringify(data)
           })
           if (response.ok) {
-            this.$router.push('/');
+            this.$router.push('/UserPage');
           } else {
             const errorText = await response.text()
             document.querySelector('.message-sign-in').innerHTML = JSON.parse(errorText).message

@@ -27,7 +27,7 @@
                         
                     <ul class="subuser">
                         <li><a class="js-userInfor js-closeChangePass">User Information</a></li>
-                        <li><a href="#">Log Out</a></li>
+                        <li @click="logout()"><a href="#">Log Out</a></li>
                     </ul>
                 </li>
                 
@@ -37,6 +37,36 @@
 
 </template>  
 
+<script>
+    export default {
+data() {
+  return {
+    
+  };
+},
+
+mounted() {
+  },
+
+methods: {
+
+    async logout() {
+      const response = await fetch("http://localhost:3000/api/v1/users/logout", {
+        method: 'POST',
+        header: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include'
+      })
+      if (response.ok){
+        this.$router.push('/HomePage')
+      }
+    },
+
+},
+
+};
+</script>
 
 <style scoped>
 
