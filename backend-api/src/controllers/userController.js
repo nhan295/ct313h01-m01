@@ -42,7 +42,7 @@ const signup = async (req, res) => {
         await userModel.signup(username, hashedPassword, email, date);
         
         req.session.user = await userModel.getUserData(username)
-        req.session.user_username = username
+        req.session.ND_HoTen = username
         res.status(200).json({ message: req.session.user });
     }
     catch (error) {
@@ -69,7 +69,7 @@ const signin = async (req, res) => {
             return res.status(401).json({ message: 'Wrong password' });
         } else {
             req.session.user = await userModel.getUserData(username)
-            req.session.user_username = username
+            req.session.ND_HoTen = username
             res.status(200).json({ message: req.session.user });
         }
     }
@@ -77,6 +77,18 @@ const signin = async (req, res) => {
         console.error(error);
         res.status(500).json({ message: 'Error signing in' });
     }
+}
+
+// Logout
+const logout = async (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ message: 'Error logging out' });
+        }
+        res.clearCookie('connect.sid');
+        res.status(200).json({ message: 'Logged out' });
+    });
 }
 
 // User data
@@ -92,5 +104,6 @@ module.exports = {
     getAllUsers,
     signup,
     signin,
-    userData,
+    userData
+  
 }

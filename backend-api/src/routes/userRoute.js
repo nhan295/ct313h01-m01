@@ -1,18 +1,11 @@
-const express = require('express')
-const userController = require('../controllers/userController')
+const express = require('express');
+const { signup, login } = require('../controllers/userController');
+const router = express.Router();
 
-const router = express.Router()
+// POST /api/v1/users/signup
+router.post('/signup', signup);
 
+// POST /api/v1/users/login
+router.post('/login', login);
 
-module.exports.setup = (app) => {
-    
-    app.use('/api/v1/users', router)
-
-    // router.get('/', userController.getAllUsers)
-
-    router.post('/signup', userController.signup)
-
-    router.post('/signin', userController.signin)
-
-    router.get('/', userController.userData)
-}
+module.exports = router;
